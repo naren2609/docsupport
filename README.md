@@ -1,8 +1,8 @@
 # docsupport
 
-##Sample Requests:
+## Sample Requests:
 
-###ADD Employee:
+### ADD Employee:
 
 curl -X POST \
   http://localhost:8080/employers \
@@ -12,7 +12,7 @@ curl -X POST \
   -d '{"userId":"","userName":"Narender","password":"narender", "personName":"Narender ","roleType":"Admin","employerName":"docsupport","streetAddress":"Balagere","city":"Bangalore","state":"KA","country":"India","websiteUrl":"www.docsupport.in","jobList":[],"zipCode":"560087","mobile":"9972990619","description":"I am First Employee","registerDate":"2022-02-28"}
 
 
-###List Employees:
+### List Employees:
 
 curl -X GET \
   http://localhost:8080/employers \
@@ -22,7 +22,7 @@ curl -X GET \
   -d '{"userId":"","userName":"Narender","password":"narende","roleType":"Admin","employerName":"Narender Reddy","streetAddress":"Balagere","city":"Bangalore","state":"KA","country":"India","websiteUrl":"www.docsupport.in","jobList":[],"zipCode":"560087","mobile":"9972990619","description":"I am First Employee","registerDate":"2022-02-28"}
 
 
-###Get Specific Employee:
+### Get Specific Employee:
 
 curl -X GET \
   http://localhost:8080/employers \
@@ -33,7 +33,7 @@ curl -X GET \
 
 
 
-###Employee Search by Name:
+### Employee Search by Name:
 
 curl -X GET \
   'http://localhost:8080/employers/search/findByEmployerName?employerName=docsupport' \
@@ -57,11 +57,11 @@ http://localhost:8080/docsupport/persons/search/highqualin?qualifications=MD,CD
 http://localhost:8080/docsupport/persons/search/skillidsin?skillIds=1,3
 
 
-###Jobs Posted by Employer:
+### Jobs Posted by Employer:
 http://localhost:8080/docsupport/employers/20/jobList (Where 20 is the employer ID - This will give jobs posted by EMployer  ID 20)
 
 
-###Person Applying for JOB Id 14: (UserId will be taken from the Token)
+### Person Applying for JOB Id 14: (UserId will be taken from the Token)
 
 curl -X POST \
   http://localhost:8080/docsupport/apply/14 \
@@ -74,7 +74,7 @@ curl -X POST \
 
 
 
-###GET JOBS applied by person with userId 2:
+### GET JOBS applied by person with userId 2:
 curl -X GET \
   'http://localhost:8080/docsupport/jobs/search/jobsapplied?userId=2' \
   -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2JzZWVrZXI1IiwiZXhwIjoxNjYzMjc2Njk1LCJpYXQiOjE2NjMyNDA2OTV9.AW3mLJx5-jcGosOOb2QAqs4ivsTfAijhd_OsUOczSp5V21a2potqPTkpUUFZRF4W_2aeMRe3E8LxzllJ5QOwnQ' \
@@ -84,7 +84,7 @@ curl -X GET \
 
 
 
-###Get All Persons Applied for the JobId 9:
+### Get All Persons Applied for the JobId 9:
 http://localhost:8080/docsupport/persons/search/personsappliedforjob?jobId=9
 
 curl -X GET \
@@ -94,7 +94,7 @@ curl -X GET \
   -H 'postman-token: 59c1bf2c-8acd-bcfc-b590-dddfbb969d96'
 
 
-###JOBS Search: (Can be used by Persons & Employers)
+### JOBS Search: (Can be used by Persons & Employers)
 
 http://localhost:8080/docsupport/jobs/search/jobssearch?catId=6&cityId=89&desc=of&req=of&empId=10
 
@@ -103,7 +103,7 @@ http://localhost:8080/docsupport/jobs/search/jobssearch?catId=6&cityId=89&desc=&
 http://localhost:8080/docsupport/jobs/search/jobssearch?catId=6&cityId=89&desc=of&req=of&empId=   (Search without "description" & "requirement" & employerId))
 
 
-###Persons Search:
+### Persons Search:
 
 
 http://localhost:8080/docsupport/persons/search/personssearch?catId=5&cityName=Hyderabad&desc=&preferredCity=Hyderabad
@@ -115,7 +115,7 @@ http://localhost:8080/docsupport/persons/search/personssearch?cityName=&desc=&pr
 http://localhost:8080/docsupport/persons/search/personssearch?catId=&cityName=&desc=&preferredCity=&skillId=&qualId=
 
 
-###With Pagination & Sorting.
+### With Pagination & Sorting.
 
 
 http://localhost:8080/docsupport/persons/search/personssearch?catId=&cityName=&desc=&preferredCity=&skillId=&qualId=&page=0&size=30&sort=registerDate,asc&sort=mobile,desc
